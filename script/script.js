@@ -6,17 +6,22 @@ $( document ).ready(function(){
   //need to adjust for 12hr format
   setInterval(update, 1000);
 
-  $( "#scheduler" ).on("click", function() {
+  $("#scheduler").on("click", function() {
     let btnAdd = $("<button>")
   })
 
-  $( ".hour" ).on("click", function(){
-    let hour = $( ".hour" );
+  $(".hour").on("click", function(){
+    let hour = $(".hour");
 
-    $('#myModal').modal(show)
-    //modal here for information input. 
+    $('.modal').modal('show')
+    
+    $('#time-value').append($(this).text())
 
+    $('.modal').on('hidden.bs.modal', function(){
+      $('#time-value').empty()
+      
+    })
   })    
-
+  
 
 })
