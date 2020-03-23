@@ -16,12 +16,16 @@ $( document ).ready(function(){
     $('.modal').modal('show')
     
     $('#time-value').append($(this).text())
-
+    // hides modal
     $('.modal').on('hidden.bs.modal', function(){
       $('#time-value').empty()
       
     })
   })    
   
+  $(".save-btn").on("click", function(){
+    const formOut = $(".form-control").val()
+    $(".task-event").text(formOut)
+  })
 
 })
